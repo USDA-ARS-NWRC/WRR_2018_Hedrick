@@ -4,8 +4,11 @@
 Andrew Hedrick<sup>1,2</sup>, Danny Marks<sup>1</sup>, Scott Havens<sup>1</sup>, Mark Robertson<sup>1</sup>, Micah Johnson<sup>1</sup>, Micah Sandusky<sup>1</sup>, Hans-Peter Marshall<sup>2</sup>, Patrick Kormos<sup>3</sup>, Kat Bormann<sup>4</sup>, and Thomas H. Painter<sup>4</sup>
 
 <sup>1</sup>USDA-ARS Northwest Watershed Research Center, Boise, Idaho, USA.
+
 <sup>2</sup>Department of Geosciences, Boise State University, Boise, Idaho, USA.
+
 <sup>3</sup>Colorado Basin River Forecast Center, National Weather Service, Salt Lake City, Utah, USA.
+
 <sup>4</sup>Jet Propulsion Laboratory/California Institute of Technology, Pasadena, California, USA.
 
 Corresponding author: Andrew Hedrick (andrew.hedrick@ars.usda.gov) 
@@ -13,8 +16,11 @@ Corresponding author: Andrew Hedrick (andrew.hedrick@ars.usda.gov)
 ## Contents
 
 `/data/`
+
 `/code/ipw`
+
 `/code/smrf`
+
 `/code/awsm`
 
 ## Running with Docker
