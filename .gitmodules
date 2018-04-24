@@ -1,3 +1,7 @@
 [submodule "smrf"]
 	path = smrf
 	url = https://github.com/USDA-ARS-NWRC/smrf.git
+
+[submodule "awsm"]
+	path = awsm
+	url = https://github.com/USDA-ARS-NWRC/awsm.git
