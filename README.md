@@ -1,37 +1,48 @@
-# Direct insertion of NASA Airborne Snow Observatory-derived snow depth time-series into the iSnobal energy balance snow model
+# Direct insertion of NASA Airborne Snow Observatory-derived snow depth time-series into the _iSnobal_ energy balance snow model
 ## Water Resources Research
 
-Andrew Hedrick<sup>1,2</sup>, Danny Marks<sup>1</sup>, Scott Havens<sup>1</sup>, Mark Robertson<sup>1</sup>, Micah Johnson<sup>1</sup>, Micah Sandusky<sup>1</sup>, Hans-Peter Marshall<sup>2</sup>, Patrick Kormos<sup>3</sup>, Kat Bormann<sup>4</sup>, and Thomas H. Painter<sup>4</sup>
+Andrew Hedrick@#, Danny Marks@, Scott Havens@, Mark Robertson@, Micah Johnson@, Micah Sandusky@, Hans-Peter Marshall#, Patrick Kormos^, Kat J. Bormann*, and Thomas H. Painter*
 
-<sup>1</sup>USDA-ARS Northwest Watershed Research Center, Boise, Idaho, USA.
+@ USDA-ARS Northwest Watershed Research Center, Boise, Idaho, USA. \
+\# Department of Geosciences, Boise State University, Boise, Idaho, USA. \
+^ Colorado Basin River Forecast Center, National Weather Service, Salt Lake City, Utah, USA. \
+\* Jet Propulsion Laboratory/California Institute of Technology, Pasadena, California, USA. 
 
-<sup>2</sup>Department of Geosciences, Boise State University, Boise, Idaho, USA.
+Corresponding author: Andrew Hedrick (andrew.hedrick@ars.usda.gov)
 
-<sup>3</sup>Colorado Basin River Forecast Center, National Weather Service, Salt Lake City, Utah, USA.
+## Background / Considerations
 
-<sup>4</sup>Jet Propulsion Laboratory/California Institute of Technology, Pasadena, California, USA.
+This Docker image contains all the necessary software for reproducing the model results presented in the above titled scientific manuscript. This application of the _iSnobal_ snow model (__Marks et al., 1999__) produces daily estimates of 19 snowpack parameters over the Tuolumne River Basin in California. In addition, this software produces all 10 of the 50-meter resolution hourly forcing grids required as input to the snow model. These forcing grids are in netCDF format and take up a considerable amount of disk space. Each variable file is approximately 65GB for an entire year and subsequently, all forcing grids for each year take up around 650GB on the local filesystem where the `/data/` directory is mounted. It is suggested that the user mount the `/data/` directory directly onto an external hard drive or server system with at least 3TB of available storage.
 
-Corresponding author: Andrew Hedrick (andrew.hedrick@ars.usda.gov) 
+In addition to the software contained in this Docker image, any person seeking to reproduce the manuscript results would need to download the data and configuration scripts located at https://doi.org/10.5281/zenodo.1228399. This dataset contains: 
+
+1. the hourly meteorological measurements from the weather stations in vector format (.csv files),
+2. the configuration files for executing the AWSM automated protocol,
+3. the static 50-meter grids for the Tuolumne Basin,
+4. the ASO 50-meter snow depth products for all 36 updates presented in the manuscript,
+5. and the shell scripts for restarting _iSnobal_ with each updated initialization file.
+
+The initial model run does not contain any updates from the Airborne Snow Observatory snow depths. These updates must be manually initiated in the command line. Outputs from the updating shell scripts will be placed in the `/data/` directory alongside the non-updated results.
 
 ## Contents
 
-`/data/`
+`/data/` This is the directory that should be mounted to your computer's local filesystem. All model outputs are directed into this folder.
 
-`/code/ipw`
+`/code/ipw` This directory contains the compiled source code for the Image Processing Workbench (IPW), which houses the iSnobal model and other associated programs.
 
-`/code/smrf`
+`/code/smrf` This directory holds the Spatial Modeling for Resources Framework (SMRF) described in detail by __Havens et al., 2017__. SMRF is responsible for distributing the point meteorological data over the modeling domain in order to create the hourly forcing grids required by _iSnobal_.
 
-`/code/awsm`
+`/code/awsm` Within this directory is the Automated Water Supply Model (AWSM), which automates the previously ad hoc process for running SMRF and _iSnobal_.
 
 ## Running with Docker
 
-To mount a data volume, so that you can share data between the local filesystem and the docker, the `-v` option must be used. 
-For a more in depth dicussion and tutorial, read https://docs.docker.com/engine/userguide/containers/dockervolumes/. The container
+To mount a data volume, so that you can share data between the local filesystem and the docker, the `-v` option must be used.
+For a more in-depth dicussion and tutorial, read https://docs.docker.com/engine/userguide/containers/dockervolumes/. The container
 has a shared data volume at `/data` where the container can access the local filesystem.
 
-When the image is ran, it will go into the Python terminal within the image. Within this terminal, AWSM can be imported. The
-command `/bin/bash` can be appended to the end of docker run to enter into the docker terminal for full control. It will start
-in the `/data` location with SMRF code in `/code/smrf` and AWSM code in `/code/awsm`.
+When the image is run, it will go into the Python terminal within the image. Within this terminal, AWSM can be imported. The
+command `/bin/bash` can be appended to the end of `docker run` command to enter into the docker terminal for full control. It will start
+in the `/data` location with IPW code in `/code/ipw`, SMRF code in `/code/smrf`, and AWSM code in `/code/awsm`.
 
 For Linux
 `docker run -v <path>:/data -it usdaaranwrc/wrr_2018_hedrick`
@@ -42,5 +53,8 @@ For MacOSX:
 For Windows:
 `docker run -v /c/Users/<path>:/data -it usdaaranwrc/wrr_2018_hedrick`
 
+## References
 
+Havens, S., Marks, D., Kormos, P., & Hedrick, A. (2017). Spatial Modeling for Resources Framework (SMRF): A modular framework for developing spatial forcing data for snow modeling in mountain basins. _Computers & Geosciences_, 109(September 2016), 295–304. https://doi.org/10.1016/j.cageo.2017.08.016
 
+Marks, D., Domingo, J., Susong, D., Link, T. E., & Garen, D. C. (1999). A spatially distributed energy balance snowmelt model for application in mountain basins. _Hydrological Processes_, 13(12–13), 1935–1959. https://doi.org/10.1002/(SICI)1099-1085(199909)13:12/13<1935::AID-HYP868>3.0.CO;2-C
