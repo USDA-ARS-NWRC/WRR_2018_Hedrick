@@ -1,5 +1,5 @@
 # SMRF is built on the IPW
-FROM usdaarsnwrc/ipw:v2.3.0
+FROM usdaarsnwrc/ipw:v2.4.0
 
 MAINTAINER Scott Havens <scott.havens@ars.usda.gov>
 
