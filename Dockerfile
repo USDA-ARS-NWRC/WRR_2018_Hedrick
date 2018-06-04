@@ -7,7 +7,9 @@ MAINTAINER Scott Havens <scott.havens@ars.usda.gov>
 # System requirements
 ####################################################
 
-RUN apt-get update -y \
+RUN echo 'Etc/UTC' > /etc/timezone \
+    && ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime \
+    && apt-get update -y \
     && apt-get install -y --no-install-recommends libblas-dev \
     liblapack-dev \
     libatlas-base-dev \
