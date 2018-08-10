@@ -1,4 +1,7 @@
 # Direct insertion of NASA Airborne Snow Observatory-derived snow depth time-series into the _iSnobal_ energy balance snow model
+
+
+
 ## Water Resources Research
 
 Andrew Hedrick@#, Danny Marks@, Scott Havens@, Mark Robertson@, Micah Johnson@, Micah Sandusky@, Hans-Peter Marshall#, Patrick Kormos^, Kat J. Bormann*, and Thomas H. Painter*
@@ -37,7 +40,7 @@ The initial model run does not contain any updates from the Airborne Snow Observ
 ## Running with Docker
 
 To mount a data volume, so that you can share data between the local filesystem and the docker, the `-v` option must be used.
-For a more in-depth dicussion and tutorial, read https://docs.docker.com/engine/userguide/containers/dockervolumes/. The container
+For a more in-depth dicussion and tutorial, read https://docs.docker.com/storage/volumes/. The container
 has a shared data volume at `/data` where the container can access the local filesystem.
 
 When the image is run, it will go into the Python terminal within the image. Within this terminal, AWSM can be imported. The
@@ -54,6 +57,8 @@ For Windows:
 `docker run -v /c/Users/<path>:/data -it usdaaranwrc/wrr_2018_hedrick`
 
 ## References
+
+Hedrick, A. R., Marks, D., Havens, S., Robertson, M., Johnson, M., Sandusky, M., Marshall, H.-P., Kormos, P. R., Bormann, K. J., & Painter, T. H. (2018). Direct insertion of NASA Airborne Snow Observatory-derived snow depth time-series into the iSnobal energy balance snow model. _submitted to Water Resources Research_.
 
 Havens, S., Marks, D., Kormos, P., & Hedrick, A. (2017). Spatial Modeling for Resources Framework (SMRF): A modular framework for developing spatial forcing data for snow modeling in mountain basins. _Computers & Geosciences_, 109(September 2016), 295–304. https://doi.org/10.1016/j.cageo.2017.08.016
 
