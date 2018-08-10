@@ -1,0 +1,67 @@
+{
+
+    "license": "other-open",
+    "title": "Direct insertion of NASA Airborne Snow Observatory-derived snow depth time-series into the iSnobal energy balance snow model",
+    "version": "v0.1",
+    "upload_type": "software",
+    "keywords": [
+        "snow modeling",
+        "water resources",
+        "remote sensing"
+    ],
+    "creators": [
+        {
+            "affiliation": "USDA Agricultural Research Service, Boise, ID, USA",
+            "name": "Andrew R. Hedrick",
+      			"orcid": "0000-0001-9511-1341"
+        },
+	{
+            "affiliation": "USDA Agricultural Research Service, Boise, ID, USA",
+            "name": "Danny Marks",
+			"orcid": "0000-0003-3105-8427"
+        },
+	{
+            "affiliation": "USDA Agricultural Research Service, Boise, ID, USA",
+            "name": "Scott Havens",
+			"orcid": "0000-0002-6933-4485"
+        },
+        {
+            "affiliation": "USDA Agricultural Research Service, Boise, ID, USA",
+            "name": "Mark Robertson",
+			"orcid": "0000-0003-4621-0161"
+        },
+        {
+            "affiliation": "USDA Agricultural Research Service, Boise, ID, USA",
+            "name": "Micah Sandusky",
+			"orcid": "0000-0002-4235-5876"
+        },
+	{
+            "affiliation": "USDA Agricultural Research Service, Boise, ID, USA",
+            "name": "Micah Johnson",
+			"orcid": "0000-0003-4029-8545"
+        },
+        {
+	    "affiliation": "Department of Geosciences, Boise State University, Boise, ID, USA",
+            "name": "Hans-Peter Marshall",
+			"orcid": "0000-0002-4852-5637"
+	},
+	{
+            "affiliation": "National Weather Service River Forecast Center, Salt Lake City, UT, USA",
+            "name": "Patrick R. Kormos",
+			"orcid": "0000-0003-1874-9215"
+        },
+        {
+            "affiliation": "Jet Propulsion Laboratory/California Institute of Technology, Pasadena, CA, USA",
+            "name": "Kat J. Bormann",
+			"orcid": "0000-0003-3697-6550"
+        },
+        {
+            "affiliation": "Jet Propulsion Laboratory/California Institute of Technology, Pasadena, CA, USA",
+            "name": "Thomas H. Painter",
+			"orcid": "0000-0002-7963-5812"
+        },
+    ],
+
+    "access_right": "open"
+
+}
