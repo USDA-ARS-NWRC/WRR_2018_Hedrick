@@ -1,6 +1,8 @@
 # Direct insertion of NASA Airborne Snow Observatory-derived snow depth time-series into the _iSnobal_ energy balance snow model
 
-
+[![GitHub version](https://badge.fury.io/gh/USDA-ARS-NWRC%2FWRR_2018_Hedrick.svg)](https://badge.fury.io/gh/USDA-ARS-NWRC%2FWRR_2018_Hedrick)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1343647.svg)](https://doi.org/10.5281/zenodo.1343647)
+[![Docker Automated build](https://img.shields.io/docker/automated/usdaarsnwrc/smrf.svg)](https://hub.docker.com/r/usdaarsnwrc/wrr_2018_hedrick/)
 
 ## Water Resources Research
 
